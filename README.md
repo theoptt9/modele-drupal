@@ -1,75 +1,29 @@
-<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
+## Etapes à effectuer pour l'installation d'un projet drupal
 
-Drupal is an open source content management platform supporting a variety of
-websites ranging from personal weblogs to large community-driven websites. For
-more information, visit the Drupal website, [Drupal.org][Drupal.org], and join
-the [Drupal community][Drupal community].
+composer create-project drupal/recommended-project "DRUPAL PROJECT NAME" 
+cd "DRUPAL PROJECT NAME" && php -d memory_limit=256M web/core/scripts/drupal quick-start demo_umami
+composer install --no-dev
 
-## Contributing
+## Base de données
 
-Drupal is developed on [Drupal.org][Drupal.org], the home of the international
-Drupal community since 2001!
+1. Sign in to phpMyAdmin as the root user.
+2. Click Users, and then click Add user.
+   Note: You can use the root user credential as well.
+3. In the User name field, enter the username that you want to use.
+4. In the Host field, select Local, which is a more secure setting, unless you'll be accessing the database with this user from another server.
+5. Enter or generate a password for the user.
+6. In the Database for User section, select Create database with same name and grant all privileges.
+7. Make sure you select utf8mb4_unicode_ci or utf8mb4_general_ci for COLLATION.
+   Note: The difference between the two collations is how much faster they are in character comparison and sorting. utf8mb4_general_ci is slightly faster however utf8mb4_unicode_ci is more accurate for a wider range of characters. If you are unsure use utf8mb4_unicode_ci.
+   Note: If you do not have the option to select COLLATION during this routine, you can change it later. Select your database from the Databases menu, then click Operations. There you will find a section for Collation where you can select the desired setting.
+8. Click Go to create the user.
 
-[Drupal.org][Drupal.org] hosts Drupal's [GitLab repository][GitLab repository],
-its [issue queue][issue queue], and its [documentation][documentation]. Before
-you start working on code, be sure to search the [issue queue][issue queue] and
-create an issue if your aren't able to find an existing issue.
+## Utiliser l'installeur drupal
 
-Every issue on Drupal.org automatically creates a new community-accessible fork
-that you can contribute to. Learn more about the code contribution process on
-the [Issue forks & merge requests page][issue forks].
+1. Aller sur l'URL localhost/core/install.php
+2. Suivre les étapes (le site en anglais permet de ne pas télécharger directement les traductions en français).
 
-## Usage
+## Surcharger un thème de base
 
-For a brief introduction, see [USAGE.txt](/core/USAGE.txt). You can also find
-guides, API references, and more by visiting Drupal's [documentation
-page][documentation].
-
-You can quickly extend Drupal's core feature set by installing any of its
-[thousands of free and open source modules][modules]. With Drupal and its
-module ecosystem, you can often build most or all of what your project needs
-before writing a single line of code.
-
-## Changelog
-
-Drupal keeps detailed [change records][changelog]. You can search Drupal's
-changes for a record of every notable breaking change and new feature since
-2011.
-
-## Security
-
-For a list of security announcements, see the [Security advisories
-page][Security advisories] (available as [an RSS feed][security RSS]). This
-page also describes how to subscribe to these announcements via email.
-
-For information about the Drupal security process, or to find out how to report
-a potential security issue to the Drupal security team, see the [Security team
-page][security team].
-
-## Need a helping hand?
-
-Visit the [Support page][support] or browse [over a thousand Drupal
-providers][service providers] offering design, strategy, development, and
-hosting services.
-
-## Legal matters
-
-Know your rights when using Drupal by reading Drupal core's
-[license](/core/LICENSE.txt).
-
-Learn about the [Drupal trademark and logo policy here][trademark].
-
-[Drupal.org]: https://www.drupal.org
-[Drupal community]: https://www.drupal.org/community
-[GitLab repository]: https://git.drupalcode.org/project/drupal
-[issue queue]: https://www.drupal.org/project/issues/drupal
-[issue forks]: https://www.drupal.org/drupalorg/docs/gitlab-integration/issue-forks-merge-requests
-[documentation]: https://www.drupal.org/documentation
-[changelog]: https://www.drupal.org/list-changes/drupal
-[modules]: https://www.drupal.org/project/project_module
-[security advisories]: https://www.drupal.org/security
-[security RSS]: https://www.drupal.org/security/rss.xml
-[security team]: https://www.drupal.org/drupal-security-team
-[service providers]: https://www.drupal.org/drupal-services
-[support]: https://www.drupal.org/support
-[trademark]: https://www.drupal.com/trademark
+Créer un dossier à l'intérieur du dossier web : themes/custom/nomDuTheme.
+Copier et coller à cet endroit 
