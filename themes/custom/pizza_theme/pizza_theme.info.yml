@@ -1,0 +1,15 @@
+name: Pizza Theme
+description: Custom theme edited by Théo Petit
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: stark
+package: Custom
+
+libraries: 
+  - pizza_theme/global-styling
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  content: Content
+  footer: Footer

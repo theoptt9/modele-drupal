@@ -1,0 +1,15 @@
+{
+  "name": "pizza_theme",
+  "version": "1.0.0",
+  "description": "## How to use Starterkit The Starterkit theme is not directly used by Drupal, nor is it used as a base theme. **Starterkit is for generating new themes** that include reasonably un-opinionated templates and styles that eliminate much of the the initial work required to create a theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "lessc-watch sources/less/style.less assets/css/styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "less-watch-compiler": "^1.16.3"
+  }
+}
