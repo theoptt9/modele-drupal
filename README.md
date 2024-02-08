@@ -1,14 +1,14 @@
 ## Etapes à effectuer pour l'installation d'un projet drupal
 
 composer create-project drupal/recommended-project "DRUPAL PROJECT NAME" 
-cd "DRUPAL PROJECT NAME" && php -d memory_limit=256M web/core/scripts/drupal quick-start demo_umami
+cd "DRUPAL PROJECT NAME"
+php -d memory_limit=256M web/core/scripts/drupal quick-start demo_umami
 composer install --no-dev
 
 ## Base de données
 
-1. Sign in to phpMyAdmin as the root user.
-2. Click Users, and then click Add user.
-   Note: You can use the root user credential as well.
+1. Aller à localhost/phpadmin
+2. Ajouter un compte utilisateur
 3. In the User name field, enter the username that you want to use.
 4. In the Host field, select Local, which is a more secure setting, unless you'll be accessing the database with this user from another server.
 5. Enter or generate a password for the user.
@@ -25,5 +25,24 @@ composer install --no-dev
 
 ## Surcharger un thème de base
 
-Créer un dossier à l'intérieur du dossier web : themes/custom/nomDuTheme.
-Copier et coller à cet endroit 
+1. Créer un dossier à l'intérieur du dossier web : themes/custom/nomDuTheme.
+2. Copier et coller à cet endroit tous les fichiers du theme starterkit_theme présent dans web>core>themes>starterkit_theme.
+3. Renommer starterkit_theme.info.yml en "nomDuTheme".info.yml
+4. Renommer starterkit_theme.libraries.yml en "nomDuTheme".info.yml
+5. Mettre dans le fichier "nomDuTheme".info.yml
+name: "nomDuTheme"
+description: Custom theme edited by Théo Petit
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: stark
+package: Custom
+
+libraries: 
+  - pizza_theme/global-styling
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  content: Content
+  footer: Footer
+4. r
