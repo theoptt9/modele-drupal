@@ -28,8 +28,9 @@ composer install --no-dev
 1. Créer un dossier à l'intérieur du dossier web : themes/custom/nomDuTheme.
 2. Copier et coller à cet endroit tous les fichiers du theme starterkit_theme présent dans web>core>themes>starterkit_theme.
 3. Renommer starterkit_theme.info.yml en "nomDuTheme".info.yml
-4. Renommer starterkit_theme.libraries.yml en "nomDuTheme".info.yml
-5. Mettre dans le fichier "nomDuTheme".info.yml
+4. Renommer starterkit_theme.libraries.yml en "nomDuTheme".libraries.yml
+5. Renommer starterkit_theme.theme en "nomDuTheme".theme
+6. Mettre dans le fichier "nomDuTheme".info.yml
 name: "nomDuTheme"
 description: Custom theme edited by Théo Petit
 type: theme
@@ -45,4 +46,33 @@ regions:
   secondary_menu: Secondary menu
   content: Content
   footer: Footer
-4. r
+
+7. Mettre dans le fichier "nomDuTheme".libraries.yml
+  global-styling:
+  version: 1.0
+  css:
+    theme:
+      assets/css/styles.css: {}
+  js:
+    assets/js/app.js: {}
+
+## Ajout du less au projet
+
+1. Se mettre dans le theme custom puis taper les commandes :
+npm init
+npm i lessc
+npm i less-watch-compiler
+
+2. Ajouter la ligne suivante dans le script du fichier package.json
+"less": "lessc-watch sources/less/style.less assets/css/styles.css"
+
+3. Dans le dossier custom/"nomDuTheme", nous devons avoir les dossiers suivants :
+- assets > css  (pour le css compilé)
+- assets > js   (pour le js compilé)
+- img (pour les images)
+- sources > js
+- sources > less (avoir au moins à l'intérieur un fichier style.less qui fasse des imports des autres fichiers less)
+- templates (pour tout ce qui est surcharge html)
+
+
+
