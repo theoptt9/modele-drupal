@@ -20,7 +20,7 @@ composer install --no-dev
 
 ## Utiliser l'installeur drupal
 
-1. Aller sur l'URL localhost/core/install.php
+1. Aller sur l'URL localhost/"nomDuProjet"/core/install.php
 2. Suivre les étapes (le site en anglais permet de ne pas télécharger directement les traductions en français).
 
 ## Surcharger un thème de base
