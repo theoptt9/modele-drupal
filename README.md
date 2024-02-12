@@ -22,6 +22,10 @@ composer install --no-dev
 
 1. Aller sur l'URL localhost/"nomDuProjet"/core/install.php
 2. Suivre les étapes (le site en anglais permet de ne pas télécharger directement les traductions en français).
+3. Modifier le php.ini en enlevant le ";" aux lignes :
+zend_extension=opcache
+opcache.enable=1
+extension=gd
 
 ## Surcharger un thème de base
 
